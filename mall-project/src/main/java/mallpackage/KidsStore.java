@@ -1,21 +1,34 @@
 package mallpackage;
 
+import java.util.Map;
+
 public class KidsStore {
-    private String toyStore;
+    private Map <Double,Toy> ToysList;
 
     //Constructors
 
     public KidsStore() {
     }
 
-    public KidsStore(String toyStore) {
-        this.toyStore = toyStore;
+    public KidsStore(Map<Double, Toy> toysList) {
+        ToysList = toysList;
     }
-    //toString
-    @Override
-    public String toString() {
-        return "KidsStore{" +
-                "toyStore='" + toyStore + '\'' +
-                '}';
+
+    public Map<Double, Toy> getToysList() {
+        return ToysList;
+    }
+
+    public void setToysList(Map<Double, Toy> toysList) {
+        ToysList = toysList;
+    }
+
+
+    // Methods
+    public void addToy(int productId, String description, float price, String brand, boolean discount){
+
+        Double key = Math.random();
+        Toy toy1=new Toy(productId, description,  price , brand, discount);
+
+        getToysList().put(key,toy1);
     }
 }

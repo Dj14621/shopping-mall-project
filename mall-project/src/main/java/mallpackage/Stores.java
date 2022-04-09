@@ -4,23 +4,34 @@ import java.util.ArrayList;
 
 public class Stores {
     //Fields
+    private String storId;
     private String name;
-    private int numcustomers;
-    private String taxid;
-    private String storid;
-    ArrayList<Integer> shoppingcart = new ArrayList<>();
+    private int storeSize;
+    private String taxId;
+    private String departement;
+
+    //ArrayList<Integer> shoppingcart = new ArrayList<>();
 
     //Constructor
 
-    public Stores(String name, int numcustomers, String taxid, String storid, ArrayList<Integer> shoppingcart) {
+    public Stores(String storId, String name, int storeSize, String taxId, String departement) {
+        this.storId = storId;
         this.name = name;
-        this.numcustomers = numcustomers;
-        this.taxid = taxid;
-        this.storid = storid;
-        this.shoppingcart = shoppingcart;
+        this.storeSize = storeSize;
+        this.taxId = taxId;
+        this.departement = departement;
     }
 
+
     //Getters and setters
+
+    public String getStorId() {
+        return storId;
+    }
+
+    public void setStorId(String storId) {
+        this.storId = storId;
+    }
 
     public String getName() {
         return name;
@@ -30,49 +41,33 @@ public class Stores {
         this.name = name;
     }
 
-    public int getNumcustomers() {
-        return numcustomers;
+    public int getStoreSize() {
+        return storeSize;
     }
 
-    public void setNumcustomers(int numcustomers) {
-        this.numcustomers = numcustomers;
+    public void setStoreSize(int storeSize) {
+        this.storeSize = storeSize;
     }
 
-    public String getTaxid() {
-        return taxid;
+    public String getTaxId() {
+        return taxId;
     }
 
-    public void setTaxid(String taxid) {
-        this.taxid = taxid;
+    public void setTaxId(String taxId) {
+        this.taxId = taxId;
     }
 
-    public String getStorid() {
-        return storid;
+    public String getDepartement() {
+        return departement;
     }
 
-    public void setStorid(String storid) {
-        this.storid = storid;
+    public void setDepartement(String departement) {
+        this.departement = departement;
     }
 
-    public ArrayList<Integer> getShoppingcart() {
-        return shoppingcart;
-    }
-
-    public void setShoppingcart(ArrayList<Integer> shoppingcart) {
-        this.shoppingcart = shoppingcart;
-    }
     //Methodes
     // To String
 
 
-    @Override
-    public String toString() {
-        return "Stores{" +
-                "name='" + name + '\'' +
-                ", numcustomers=" + numcustomers +
-                ", taxid='" + taxid + '\'' +
-                ", storid='" + storid + '\'' +
-                ", shoppingcart=" + shoppingcart +
-                '}';
-    }
+
 }
