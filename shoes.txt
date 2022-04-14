@@ -1,0 +1,5 @@
+001, running shoe, 100, er1423251, NIKE, white, 8, true
+002, class shoe, 200, tr54361, Adidas, black, 9, false
+003, woman shoe, 50, iu11i4321, DSW, brown, 8, false
+004, sandales, 30, df656876, reef, green, 9, true
+005, havy duty, 500, yt7645254, gat, black, 10, true

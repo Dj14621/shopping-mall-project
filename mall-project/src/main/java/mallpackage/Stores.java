@@ -8,18 +8,18 @@ public class Stores {
     private String name;
     private int storeSize;
     private String taxId;
-    private String departement;
+
 
     //ArrayList<Integer> shoppingcart = new ArrayList<>();
 
     //Constructor
 
-    public Stores(String storId, String name, int storeSize, String taxId, String departement) {
+    public Stores(String storId, String name, int storeSize, String taxId) {
         this.storId = storId;
         this.name = name;
         this.storeSize = storeSize;
         this.taxId = taxId;
-        this.departement = departement;
+
     }
 
 
@@ -57,13 +57,7 @@ public class Stores {
         this.taxId = taxId;
     }
 
-    public String getDepartement() {
-        return departement;
-    }
 
-    public void setDepartement(String departement) {
-        this.departement = departement;
-    }
 
     //Methodes
     // To String

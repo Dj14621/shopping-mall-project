@@ -1,25 +1,36 @@
 package mallpackage;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookStore {
+public class BookStore extends Stores{
 
-
+    private static final Path filePath1 = Paths.get("C:\\FannieProjects\\shopping-mall-project\\mall-project\\books.txt");
     private List <Book> bookList ;
 
     //Constructor
 
-    public BookStore(List<Book> bookList) {
+    public BookStore(String storId, String name, int storeSize, String taxId) {
+        super(storId, name, storeSize, taxId);
+    }
+
+    public BookStore(String storId, String name, int storeSize, String taxId, List<Book> bookList) {
+        super(storId, name, storeSize, taxId);
         this.bookList = bookList;
     }
 
-    public BookStore() {
-    }
+    public static void readBookStoreFile(String s) {
 
-    //Getters and setters
+    }
+//Getters and setters
 
     public List<Book> getBookList() {
         return bookList;
@@ -30,6 +41,10 @@ public class BookStore {
     }
 
     //Methods
+
+
+
+
     public int getNumberOfBooks(){
         int size ;
         size = bookList.size();
@@ -46,7 +61,7 @@ public class BookStore {
 
     }
 // add a book to the list
-    public void addBooklist(  String isbn, String category, String language, boolean bookType ,int productId, String description,float price) {
+    public void addBooklist(String isbn, String category, String language, boolean bookType, int productId, String description, float price) {
            Book book1 = new Book(productId, description, price, isbn, category, language, bookType);
         getBookList().add(book1);
     }
@@ -67,4 +82,5 @@ public class BookStore {
                 "bookList=" + bookList +
                 '}';
     }
+
 }

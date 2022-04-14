@@ -1,0 +1,7 @@
+idproduct,description,price,isbn,category,language,bookType
+001,dictionary,50,23456789,literature,english,electroonic
+002,Quran,50,234tyui34,religious,english,electroonic
+003,Bible,50,235467789,religious,english,electroonic
+004,who am i,50,245447568678,literature,french,electroonic
+005,recipe,30,0923533,cooking,arabic,non electroonic
+006,snow white,50,23456789,kids book,english,electroonic

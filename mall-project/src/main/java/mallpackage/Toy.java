@@ -22,6 +22,9 @@ public class Toy extends Product{
         super(productId, description, price);
     }
 
+
+
+
     public String getBrand() {
         return brand;
     }

@@ -1,0 +1,4 @@
+productId, description, price, brand, discount
+001, water gun, 20, somebrand, true
+002, ballon, 2, ballon inc, false
+003, doll, 20, barbie, true

@@ -1,45 +1,63 @@
 import customerpackage.Customer;
-import mallpackage.*;
+import mallpackage.BookStore;
+import mallpackage.ShoeStore;
+import mallpackage.BookStore;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.nio.file.*;
 import java.nio.file.Files;
-import java.util.Set;
+
+import static mallpackage.KidsStore.readToyStoreFile;
+
 
 public class Main {
+    //public static void main(String[] args) throws IOException {
     private static final Path filePath = Paths.get("C:\\FannieProjects\\shopping-mall-project\\mall-project\\signin.txt");
+    private static final Path filePath1 = Paths.get("C:\\FannieProjects\\shopping-mall-project\\mall-project\\books.txt");
+
     public static void main(String[] args) throws IOException {
 
 
-        Shoe shoe1 = new Shoe(0001, "best shoe", 50, "qwert213456", "Nike", "green", 10, true);
-        //Shoe shoe2 = new Shoe(0002, "best shoe", 50, "qwert213456", "Nike", "green", 10, true);
+        System.out.println("\nWelcome to Vinci Mall\n");
+        Scanner scanner = new Scanner(new File("C:\\FannieProjects\\shopping-mall-project\\mall-project\\signin.txt"));
+        //final Path filePath = Paths.get("C:\\FannieProjects\\mall-project\\signin.txt");
+        signin();
+
+        //pick a store
+        pickStore();
+        
 
 
 
-        ShoeStore myShoeList = new ShoeStore("00001", "DSC", 1000, "234567890", "Kids");
-        myShoeList.toString();
-        myShoeList.addShoe(shoe1);
-        myShoeList.toString();
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+        switch (choice) {
+
+            case 1:
+                System.out.println("Welcome to BookStore");
+                BookStore.readBookStoreFile("C:\\FannieProjects\\shopping-mall-project\\books.txt");
+                break;
+            case 2:
+                System.out.println("Welcome to shoeStore");
+                ShoeStore.loadShoes("C:\\FannieProjects\\shopping-mall-project\\shoes.txt");
+                break;
+            case 3:
+                System.out.println("Welcome to ToyStore");
+                readToyStoreFile("C:\\FannieProjects\\shopping-mall-project\\mall-project\\toys.txt");
+                break;
+            default:
+                System.out.println("Please pick either (1 - 3)");
+
+        }
+        //Shoe shoe1 = new Shoe(0001, "best shoe", 50, "qwert213456", "Nike", "green", 10, true);
+        //ShoeStore.loadShoes("C:\\FannieProjects\\shopping-mall-project\\shoes.txt");
+        BookStore.readBookStoreFile("C:\\FannieProjects\\shopping-mall-project\\books.txt");
 
 
-       // BookStore bookStore = new BookStore();
 
-
-//
-//        Book book1 = new Book(0004, "good book", 20, "2132efdbgnh", "History", "arabic", true)
-//
-//        Toy toy1 = new Toy(0005, "doll", 10, "Toys'r us", false);
-//
-//
-//        System.out.println("\nWelcome to Vinci Mall\n");
-//        Scanner scanner = new Scanner(new File("C:\\FannieProjects\\shopping-mall-project\\mall-project\\signin.txt"));
-//        //final Path filePath = Paths.get("C:\\FannieProjects\\mall-project\\signin.txt");
-//        signin();
 
     }
 
@@ -53,7 +71,6 @@ public class Main {
         System.out.println("Enter your password: ");
         String password = scanner.next();
         Customer customer1 = new Customer(firstName, lastName, password);
-        Customer customer2 = new Customer(firstName, lastName, password);
 
 
         //Update
@@ -76,7 +93,7 @@ public class Main {
     }
 
     //Update
-//    public static void writeAFile() {
+//      public static void writeAFile() {
 //        try {
 //            Files.writeString(filePath, "lets do shopping today");
 //        } catch (Exception e) {
@@ -84,6 +101,40 @@ public class Main {
 //        }
 //
 //    }
+    //pick a store choice
 
+    public static void pickStore() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please choose a store: ");
+        System.out.println("1\t BookStore");
+        System.out.println("2\t ShoeStore");
+        System.out.println("3\t ToyStore");
+        //System.out.println("Please choose a store: ");
 
+    }
+
+//
+
+    public static void readBookStoreFile() {
+        String temp;
+        try {
+            temp = Files.readString(filePath1);
+            System.out.println(temp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+//    public static void readToyStoreFile() {
+//        String temp;
+//        try {
+//            temp = Files.readString(filePath2);
+//            System.out.println(temp);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+
+//
 }
+
+
+
